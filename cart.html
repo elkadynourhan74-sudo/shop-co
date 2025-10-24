@@ -73,11 +73,12 @@
             </div>
             <div class="p-2">
               <div class="text-danger text-end"><i class="bi bi-trash3-fill"></i></div>
-              <div class="bg-secondary bg-opacity-10 rounded-pill mt-5">
-                <button class="btn btn-sm">-</button>
-                <span class="mx-2">1</span>
-                <button class="btn btn-sm">+</button>
+              <div class="counter d-flex align-items-center justify-content-center gap-2 my-2 mt-5 bg-secondary bg-opacity-10 rounded-pill">
+                <button class="btn border-0 fw-bold fs-5 px-3 decrease">−</button>
+                <span class="fs-4 fw-semibold count">1</span>
+                <button class="btn border-0  fw-bold fs-5 px-3 increase">+</button>
               </div>
+
             </div>
           </div>
           <hr style="width:95% ; margin: auto;">
@@ -94,11 +95,12 @@
             </div>
             <div class="p-2">
               <div class="text-danger text-end"><i class="bi bi-trash3-fill"></i></div>
-              <div class="bg-secondary bg-opacity-10 rounded-pill mt-5">
-                <button class="btn btn-sm">-</button>
-                <span class="mx-2">1</span>
-                <button class="btn btn-sm">+</button>
+              <div class="counter d-flex align-items-center justify-content-center gap-2 my-2 mt-5 bg-secondary bg-opacity-10 rounded-pill">
+                <button class="btn border-0 fw-bold fs-5 px-3 decrease">−</button>
+                <span class="fs-4 fw-semibold count">1</span>
+                <button class="btn border-0 fw-bold fs-5 px-3 increase">+</button>
               </div>
+
             </div>
           </div>
           <hr style="width:95% ; margin: auto;">
@@ -115,11 +117,12 @@
             </div>
             <div class="p-2">
               <div class="text-danger text-end"><i class="bi bi-trash3-fill"></i></div>
-              <div class="bg-secondary bg-opacity-10 rounded-pill mt-5">
-                <button class="btn btn-sm">-</button>
-                <span class="mx-2">1</span>
-                <button class="btn btn-sm">+</button>
+              <div class="counter d-flex align-items-center justify-content-center gap-2 my-2 mt-5 bg-secondary bg-opacity-10 rounded-pill">
+                <button class="btn border-0 fw-bold fs-5 px-3 decrease">−</button>
+                <span class="fs-4 fw-semibold count">1</span>
+                <button class="btn border-0 fw-bold fs-5 px-3 increase">+</button>
               </div>
+
             </div>
           </div>
         </div>
@@ -140,15 +143,17 @@
           </div>
           <hr>
           <div class="d-flex justify-content-between">
-          <p>Total</p>
-          <p class="fw-bold">$467</p>
-        </div>
-        <div class="d-flex m-3 ">
-          <input class="form-control form-control-sm w-75 rounded-pill p-2 border-0 bg-secondary bg-opacity-10 text-secondary" type="text" placeholder="Add promo code"
-            aria-label=".form-control-sm example">
-          <button type="button" class="btn bg-black text-white rounded-pill p-2 ps-4 pe-4 ms-2 btn-sm">Apply</button>
-        </div>
-        <button class="btn bg-black text-white p-2 rounded-pill w-100" type="button">Go to Checkout <i class="bi bi-arrow-right"></i></button>
+            <p>Total</p>
+            <p class="fw-bold">$467</p>
+          </div>
+          <div class="d-flex m-3 ">
+            <input
+              class="form-control form-control-sm w-75 rounded-pill p-2 border-0 bg-secondary bg-opacity-10 text-secondary"
+              type="text" placeholder="Add promo code" aria-label=".form-control-sm example">
+            <button type="button" class="btn bg-black text-white rounded-pill p-2 ps-4 pe-4 ms-2 btn-sm">Apply</button>
+          </div>
+          <button class="btn bg-black text-white p-2 rounded-pill w-100" type="button">Go to Checkout <i
+              class="bi bi-arrow-right"></i></button>
         </div>
       </div>
     </div>
@@ -210,6 +215,27 @@
 
   </footer>
   <script src="js/bootstrap.bundle.js"></script>
+  <script>
+    document.querySelectorAll('.counter').forEach(counter => {
+      const decreaseBtn = counter.querySelector('.decrease');
+      const increaseBtn = counter.querySelector('.increase');
+      const countEl = counter.querySelector('.count');
+
+      let count = parseInt(countEl.textContent);
+
+      increaseBtn.addEventListener('click', () => {
+        count++;
+        countEl.textContent = count;
+      });
+
+      decreaseBtn.addEventListener('click', () => {
+        if (count > 1) {
+          count--;
+          countEl.textContent = count;
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

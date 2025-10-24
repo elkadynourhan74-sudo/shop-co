@@ -1,0 +1,56 @@
+.container {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .thumbs img {
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    .thumbs img.active {
+      border: 2px solid black;
+    }
+
+    .main img {
+      border-radius: 10px;
+      transition: opacity 1s ease;
+    }
+
+    .main img.fade-out {
+      opacity: 0;
+    }
+
+    .color-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 10px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .color-btn.active {
+      border: 2px solid black;
+    }
+
+    .sizes button {
+      padding: 8px 16px;
+      margin: 5px;
+      border: 1px solid #f5f5f5;
+      border-radius: 20px;
+      background: #f5f5f5;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .sizes button.active {
+      background: black;
+      color: white;
+      border-color: black;
+    }
+  
